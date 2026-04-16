@@ -35,7 +35,7 @@ var walker = {
 
   Note: You can have multiple event listeners for different types of events.
   */
-  $(document).on('eventType', handleEvent);    
+  
    $(document).on("keydown", handleKeyDown);   
     $(document).on("keyup", handleKeyUp);  
 
@@ -49,8 +49,8 @@ var walker = {
   by calling this function and executing the code inside.
   */
   function newFrame() {
-    repositionGameItem() ;
-    console.log(walker.x, walker.Y);
+    repositionGameItem();
+    console.log(walker.x, walker.y);
     redrawGameItem()
  
   }
@@ -61,7 +61,7 @@ var walker = {
   
   Note: You can have multiple event handlers for different types of events.
   */
-  function handleEvent(event) {
+  function handleKeyDown(event) {
 console.log(event.which);
 
 if (event.which === KEY.LEFT){
@@ -113,12 +113,13 @@ else{}
     walker.x += walker.speedX;
      walker.y += walker.speedY;
   }
-   function repositionGameItem() {
+   function redrawGameItem() {
     $ ("#walker") .css("left", walker.x);
     $ ("#walker") .css("top", walker.x);
   }
   function wallCollision() {
     //stop the interval timer
-    clearInterval(interval);
+    //clearInterval(interval);
   }
+
 }
