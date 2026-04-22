@@ -115,7 +115,7 @@ else{}
   }
    function redrawGameItem() {
     $ ("#walker") .css("left", walker.x);
-    $ ("#walker") .css("top", walker.x);
+    $ ("#walker") .css("top", walker.y);
   }
   function wallCollision() {
     //stop the interval timer
